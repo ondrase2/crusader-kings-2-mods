@@ -1,0 +1,4 @@
+
+one_with_nature_cooldown_mod = {
+	icon = 1
+}

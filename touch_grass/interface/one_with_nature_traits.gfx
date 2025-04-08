@@ -1,0 +1,22 @@
+spriteTypes = {
+
+	spriteType = {
+		name = "GFX_trait_one_with_nature"
+		texturefile = "gfx/traits/one_with_nature.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_touch_grass"
+		texturefile = "gfx/interface/decision_icon_touch_grass.tga"
+	}
+
+	spriteType = {
+		name = "GFX_touch_grass_repeatable"
+		texturefile = "gfx/interface/decision_icon_touch_grass_repeatable.tga"
+	}
+
+
+	
+}

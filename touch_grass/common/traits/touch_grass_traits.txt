@@ -1,0 +1,11 @@
+#########touch_grass
+one_with_nature = {
+	martial = 1
+	vassal_opinion = 5
+	monthly_character_prestige = 0.1
+	fertility = 0.1
+	sex_appeal_opinion = 10
+	ruler_designer_cost = 25
+}
+
+
