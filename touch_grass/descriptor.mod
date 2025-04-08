@@ -1,3 +1,3 @@
 name="Go touch grass"
-archive="mod/touch_grass.zip"
+archive="mod/touch_grass"
 picture="grass.jpg"
