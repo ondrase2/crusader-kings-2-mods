@@ -3,6 +3,7 @@ decisions = {
 		is_high_prio = yes	
 		potential = {
 			NOT = { trait = one_with_nature }
+			NOT = {	has_character_modifier = journey_to_nature }
 		}
 		allow = {
 			custom_tooltip = {
@@ -13,31 +14,48 @@ decisions = {
 			}
 
 				OR = {
-							trait = on_pilgrimage
-							trait = varangian
-							trait = viking 
-							trait = brave
+							#trait = on_pilgrimage
+							#trait = varangian
+							#trait = viking 
+							#trait = brave
 							trait = immortal
 							trait = stressed
 				}
 			is_ruler = yes
 			#age = 16	
-			#wealth = 200
+			wealth = 20
 			#martial = 10
 			primary_title = { higher_tier_than = COUNT }
+			prisoner = no
+			NOT = { is_inaccessible_trigger = yes }
+			custom_tooltip = {
+				text = is_not_busy_trigger_tooltip
+				hidden_tooltip = { NOT = { has_character_flag = do_not_disturb } }
+			}
 		}			
 		effect = {
-			wealth = -2
-			remove_trait = stressed
-			add_trait = one_with_nature
-			set_character_flag = one_with_nature
+			wealth = -20
+			#remove_trait = stressed
+			#add_trait = one_with_nature
+			#set_character_flag = one_with_nature
 			hidden_tooltip = {
 				add_character_modifier = {
 					modifier = one_with_nature_cooldown_mod
-					years = 2
+					years = 1
 					hidden = yes
 				}
 			}
+			hidden_tooltip = {
+				add_character_modifier = {
+					modifier = journey_to_nature
+					months = 5
+					hidden = yes
+				}
+			}
+			#hidden_tooltip = { 
+				character_event = { id = touch_grass_ev.1 days = 1  }
+
+			#}
 		}
 		ai_will_do = {
 			factor = 1

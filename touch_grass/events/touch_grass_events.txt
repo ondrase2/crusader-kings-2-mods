@@ -1,0 +1,297 @@
+namespace = touch_grass_ev
+character_event = {
+	id = touch_grass_ev.1
+	picture = "GFX_evt_hunt"
+	desc = "EVTDESC_touch_grass_ev_1"
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				capital_scope = {
+					OR = {
+						region = world_europe_south
+						region = world_europe_west
+						region = world_asia_minor
+					}
+				}
+			}
+			set_character_flag = journey_to_nature_central_south
+		}
+		if = {
+			limit = {
+				capital_scope = {
+					OR = {
+						region = world_europe_north
+						region = world_europe_east
+						region = world_steppe
+					}
+				}
+			}
+			set_character_flag = journey_to_nature_central
+		}
+		if = {
+			limit = {
+				capital_scope = {
+					OR = {
+						region = world_india
+						region = world_persia
+					}
+				}
+			}
+			set_character_flag = journey_to_nature_middle_east
+		}
+		if = {
+			limit = {
+				capital_scope = {
+					OR = {
+						region = world_middle_east
+						region = world_africa
+					}
+				}
+			}
+			set_character_flag = journey_to_nature_africa
+		}
+	}	
+
+	option = {
+		name = "EVTDESC_touch_grass_ev_1a"
+		trigger = {
+			has_character_flag = journey_to_nature_central_south
+		}
+		hidden_effect = {
+			if = {
+				limit = { NOT = { has_character_flag = epic_hunt } }
+				clr_character_flag = journey_to_nature_africa
+				clr_character_flag = journey_to_nature_middle_east
+				clr_character_flag = journey_to_nature_central
+				character_event = { id = touch_grass_ev.2 days = 20 }
+			}
+		}
+	}
+	option = {
+		name = "EVTDESC_touch_grass_ev_1b"
+		trigger = {
+			has_character_flag = journey_to_nature_central
+		}
+		hidden_effect = {
+			#if = {
+				#limit = { NOT = { has_character_flag = epic_hunt } }
+				clr_character_flag = journey_to_nature_africa
+				clr_character_flag = journey_to_nature_middle_east
+				clr_character_flag = journey_to_nature_central_south
+				character_event = { id = touch_grass_ev.2 days = 20 }
+			#}
+		}
+	}
+	option = {
+		name = "EVTDESC_touch_grass_ev_1c"
+		trigger = {
+			has_character_flag = journey_to_nature_middle_east
+		}
+		hidden_effect = {
+			if = {
+				limit = { NOT = { has_character_flag = epic_hunt } }
+				clr_character_flag = journey_to_nature_africa
+				clr_character_flag = journey_to_nature_central
+				clr_character_flag = journey_to_nature_central_south
+				character_event = { id = touch_grass_ev.2 days = 20 }
+			}
+		}
+	}
+	option = {
+		name = "EVTDESC_touch_grass_ev_1d"
+		trigger = {
+			has_character_flag = journey_to_nature_africa
+		}
+		hidden_effect = {
+			if = {
+				limit = { NOT = { has_character_flag = epic_hunt } }
+				clr_character_flag = journey_to_nature_middle_east
+				clr_character_flag = journey_to_nature_central
+				clr_character_flag = journey_to_nature_central_south
+				character_event = { id = touch_grass_ev.2 days = 20 }
+			}
+		}
+	}
+
+
+}
+
+#A Majestic Stag forests
+character_event = {
+	id = touch_grass_ev.2
+	desc = "EVTDESC_touch_grass_ev_2" #You find yourself in a middle of a forest.You can hear the birds singing and the wind blowing on the leaves.How do you feel?
+	picture = "GFX_evt_hunt"
+
+	min_age =  16
+	capable_only = yes
+	prisoner = no
+	only_playable = yes
+	is_triggered_only = yes
+	#trigger = {
+		#has_character_modifier = journey_to_nature
+		#has_character_flag = journey_to_nature_central_south
+		#NOT = { has_character_flag = journey_to_nature_init_event_fired }
+	#}
+	
+	immediate = {
+		set_character_flag = journey_to_nature_init_event_fired
+		clr_character_flag = journey_to_nature_central_south
+		clr_character_flag = journey_to_nature_africa
+		clr_character_flag = journey_to_nature_middle_east
+		clr_character_flag = journey_to_nature_central
+	}
+
+	#mean_time_to_happen = {
+		#months = 1
+
+	#}
+
+	option = {
+		name = "EVTDESC_touch_grass_ev_2a"#I feel so calm.like all the problems have just dissapeared.I am on with nature and the nature is one with me.
+		trigger = {
+			NOT = {
+				OR = {
+					trait = craven
+					trait = shy
+				}
+			}
+		}
+		remove_trait = stressed
+		add_trait = one_with_nature
+		set_character_flag = one_with_nature
+		hidden_tooltip = {
+			add_character_modifier = {
+				modifier = one_with_nature_cooldown_mod
+				years = 2
+				hidden = yes
+			}
+		}
+		character_event = { id = touch_grass_ev.100 days = 20 }
+	}
+
+	option = {
+		name = "EVTDESC_touch_grass_ev_2b"#Actualy i dont like it here there too mouch sunlight and insects and i want to go home!
+		tooltip_info = craven
+		trigger = {
+			OR = {
+				trait = craven
+				trait = shy
+			}
+		}
+		prestige = -10
+		character_event = { id = touch_grass_ev.102 days = 20 }
+	}
+	option = {
+		name = "EVTDESC_touch_grass_ev_2c"#Its touch but I have to power trough.
+		trigger = {
+			OR = {
+				trait = craven
+				trait = shy
+			}
+		}
+		remove_trait = craven
+		remove_trait = shy
+		character_event = { id = touch_grass_ev.101 days = 20 }
+		
+	}
+	
+
+	option = {
+		name = "EVTDESC_touch_grass_ev_2d"#hmmm...i guess its fine but you know what is also fine...staying home.
+		trigger = {
+			#trait = arbitrary
+			NOT = { trait = craven }
+			NOT = { trait = shy }
+		}
+		remove_trait = stressed
+		character_event = { id = touch_grass_ev.101 days = 20 }
+		
+	}
+}
+
+
+
+
+
+
+#good end.
+character_event = {
+	id = touch_grass_ev.100
+	desc = "EVTDESC_touch_grass_ev_100"#You Are nature incarnate.
+	picture = "GFX_evt_hunt"
+
+	is_triggered_only = yes
+
+	
+
+	immediate = {
+		remove_character_modifier = journey_to_nature
+		clr_character_flag = do_not_disturb
+		clr_character_flag = journey_to_nature_init_event_fired
+		clr_character_flag = journey_to_nature_central_south
+		clr_character_flag = journey_to_nature_africa
+		clr_character_flag = journey_to_nature_middle_east
+		clr_character_flag = journey_to_nature_central
+	}
+
+	option = {
+		name = "EVTDESC_touch_grass_ev_100a"
+		prestige = 10
+	}
+}
+#was shy so needs to try again.
+character_event = {
+	id =touch_grass_ev.101
+	desc = "EVTDESC_touch_grass_ev_101"
+	picture = "GFX_evt_hunt"
+
+	is_triggered_only = yes
+
+
+	immediate = {
+		remove_character_modifier = journey_to_nature
+		clr_character_flag = do_not_disturb
+		clr_character_flag = journey_to_nature_init_event_fired
+		clr_character_flag = journey_to_nature_central_south
+		clr_character_flag = journey_to_nature_africa
+		clr_character_flag = journey_to_nature_middle_east
+		clr_character_flag = journey_to_nature_central
+	}
+
+	option = {
+		name = "EVTDESC_touch_grass_ev_101a"
+		prestige = 10
+	}
+}
+#coward
+character_event = {
+	id = touch_grass_ev.102
+	desc = "EVTDESC_touch_grass_ev_102"
+	picture = "GFX_evt_hunt"
+
+	is_triggered_only = yes
+
+	
+
+	immediate = {
+		remove_character_modifier = journey_to_nature
+		clr_character_flag = do_not_disturb
+		clr_character_flag = journey_to_nature_init_event_fired
+		clr_character_flag = journey_to_nature_central_south
+		clr_character_flag = journey_to_nature_africa
+		clr_character_flag = journey_to_nature_middle_east
+		clr_character_flag = journey_to_nature_central
+	}
+
+	option = {
+		name = "EVTDESC_touch_grass_ev_102a"
+		prestige = 10
+	}
+}
+
+	
+}
+
