@@ -119,7 +119,7 @@ character_event = {
 
 }
 
-#A Majestic Stag forests
+#forests
 character_event = {
 	id = touch_grass_ev.2
 	desc = "EVTDESC_touch_grass_ev_2" #You find yourself in a middle of a forest.You can hear the birds singing and the wind blowing on the leaves.How do you feel?
@@ -189,8 +189,6 @@ character_event = {
 				trait = shy
 			}
 		}
-		remove_trait = craven
-		remove_trait = shy
 		character_event = { id = touch_grass_ev.101 days = 20 }
 		
 	}
@@ -213,7 +211,7 @@ character_event = {
 
 
 
-#good end.
+#happy ending.
 character_event = {
 	id = touch_grass_ev.100
 	desc = "EVTDESC_touch_grass_ev_100"#You Are nature incarnate.

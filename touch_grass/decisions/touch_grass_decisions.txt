@@ -2,8 +2,14 @@ decisions = {
 	touch_grass = {
 		is_high_prio = yes	
 		potential = {
-			NOT = { trait = one_with_nature }
+			#NOT = { trait = one_with_nature }
 			NOT = {	has_character_modifier = journey_to_nature }
+				OR = {
+							
+							#trait = immortal
+							trait = stressed
+							NOT = { trait = one_with_nature }
+				}
 		}
 		allow = {
 			custom_tooltip = {
@@ -12,12 +18,15 @@ decisions = {
 					NOT = { has_character_modifier = one_with_nature_cooldown_mod }
 				}
 			}
-
-				OR = {
+			OR = {
 							
-							trait = immortal
+							#trait = immortal
 							trait = stressed
-				}
+							NOT = { trait = one_with_nature }
+				
+			}
+
+				
 			is_ruler = yes	
 			wealth = 20
 			primary_title = { higher_tier_than = COUNT }
@@ -72,61 +81,4 @@ decisions = {
 		}
 	}
 
-	touch_grass_repeatable = {
-		is_high_prio = yes	
-		potential = {
-			
-			trait = one_with_nature
-		}
-		allow = {
-			custom_tooltip = {
-				text = one_with_nature_cooldown_desc
-				hidden_tooltip = {
-					NOT = { has_character_modifier = one_with_nature_cooldown_mod }
-				}
-			}
-
-				OR = {
-							trait = stressed
-				}
-			is_ruler = yes
-			#age = 16	
-			#wealth = 200
-			#martial = 10
-			primary_title = { higher_tier_than = COUNT }
-		}			
-		effect = {
-			wealth = -2# I mean going outside is basicaly free!
-			remove_trait = stressed
-			add_trait = one_with_nature
-			set_character_flag = one_with_nature
-			hidden_tooltip = {
-				add_character_modifier = {
-					modifier = one_with_nature_cooldown_mod
-					years = 2
-					hidden = yes
-				}
-			}
-		}
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0.02
-			}
-			modifier = {
-				factor = 2
-				martial = 16
-			}
-			modifier = {
-				factor = 0.2
-				is_female = yes
-			}
-			modifier = {
-				factor = 2
-				trait = brave
-			}
-		}
-	}
-
-	
 }
