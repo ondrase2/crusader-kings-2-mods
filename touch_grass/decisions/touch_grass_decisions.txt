@@ -14,17 +14,12 @@ decisions = {
 			}
 
 				OR = {
-							#trait = on_pilgrimage
-							#trait = varangian
-							#trait = viking 
-							#trait = brave
+							
 							trait = immortal
 							trait = stressed
 				}
-			is_ruler = yes
-			#age = 16	
+			is_ruler = yes	
 			wealth = 20
-			#martial = 10
 			primary_title = { higher_tier_than = COUNT }
 			prisoner = no
 			NOT = { is_inaccessible_trigger = yes }
