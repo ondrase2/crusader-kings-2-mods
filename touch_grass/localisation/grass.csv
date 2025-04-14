@@ -6,19 +6,19 @@ touch_grass_desc;You feel the need to go outside and touch some grass.;;;;;;;;;;
 touch_grass_repeatable;One with nature;;;;;;;;;;;;;x
 touch_grass_repeatable_desc;Perhaps its time to give the outside a try again.;;;;;;;;;;;;;x
 one_with_nature_cooldown_desc;Nature is fine and all but maybe you should just stay indoors for a few years.;;;;;;;;;;;;;x
-EVTDESC_touch_grass_ev_1;You made your mid so go outside and seek tranquility.;;;;;;;;;;;;;x
-EVTDESC_touch_grass_ev_1a;You made your mid so go outside and seek tranquility.;;;;;;;;;;;;;x
-EVTDESC_touch_grass_ev_1b;You made your mid so go outside and seek tranquility.;;;;;;;;;;;;;x
-EVTDESC_touch_grass_ev_1c;You made your mid so go outside and seek tranquility.;;;;;;;;;;;;;x
-EVTDESC_touch_grass_ev_1d;You made your mid so go outside and seek tranquility.;;;;;;;;;;;;;x
+EVTDESC_touch_grass_ev_1;You made your mind to go outside and seek tranquility.;;;;;;;;;;;;;x
+EVTDESC_touch_grass_ev_1a;You made your mind to go outside and seek tranquility.;;;;;;;;;;;;;x
+EVTDESC_touch_grass_ev_1b;You made your mind to go outside and seek tranquility.;;;;;;;;;;;;;x
+EVTDESC_touch_grass_ev_1c;You made your mind to go outside and seek tranquility.;;;;;;;;;;;;;x
+EVTDESC_touch_grass_ev_1d;You made your mind to go outside and seek tranquility.;;;;;;;;;;;;;x
 EVTDESC_touch_grass_ev_2;You find yourself in a middle of a forest.You can hear the birds singing and the wind blowing on the leaves.How do you feel?;;;;;;;;;;;;;x
 EVTDESC_touch_grass_ev_2a;I feel so calm.like all the problems have just dissapeared.I am on with nature and the nature is one with me;;;;;;;;;;;;;x
 EVTDESC_touch_grass_ev_2b;Actualy i dont like it here there too mouch sunlight and insects and i want to go home!;;;;;;;;;;;;;x
-EVTDESC_touch_grass_ev_2c;Its touch but I have to power trough.;;;;;;;;;;;;;x
-EVTDESC_touch_grass_ev_2d;hmmm...i guess its fine but you know what is also fine...staying home.;;;;;;;;;;;;;x
-EVTDESC_touch_grass_ev_100;You Are nature incarnate.;;;;;;;;;;;;;x
+EVTDESC_touch_grass_ev_2c;Its touch but I have to power through.;;;;;;;;;;;;;x
+EVTDESC_touch_grass_ev_2d;Hmmm...i guess its fine but you know what is also fine...staying home.;;;;;;;;;;;;;x
+EVTDESC_touch_grass_ev_100;You are nature incarnate.;;;;;;;;;;;;;x
 EVTDESC_touch_grass_ev_100a;YES!;;;;;;;;;;;;;x
-EVTDESC_touch_grass_ev_101;You conquered your fears but maven realy relaxed much.;;;;;;;;;;;;;x
+EVTDESC_touch_grass_ev_101;You conquered your fears but havent realy relaxed much.;;;;;;;;;;;;;x
 EVTDESC_touch_grass_ev_101a;I will have to try this again.;;;;;;;;;;;;;x
 EVTDESC_touch_grass_ev_102;You are a coward and a failure.;;;;;;;;;;;;;x
 EVTDESC_touch_grass_ev_102a;yes.;;;;;;;;;;;;;x
