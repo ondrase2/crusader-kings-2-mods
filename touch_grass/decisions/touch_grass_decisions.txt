@@ -42,6 +42,7 @@ decisions = {
 			#remove_trait = stressed
 			#add_trait = one_with_nature
 			#set_character_flag = one_with_nature
+			set_character_flag = do_not_disturb
 			hidden_tooltip = {
 				add_character_modifier = {
 					modifier = one_with_nature_cooldown_mod
