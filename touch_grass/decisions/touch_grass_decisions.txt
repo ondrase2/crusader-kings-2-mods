@@ -65,19 +65,7 @@ decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.02
-			}
-			modifier = {
-				factor = 2
-				martial = 16
-			}
-			modifier = {
-				factor = 0.2
-				is_female = yes
-			}
-			modifier = {
-				factor = 2
-				trait = brave
+				factor = 0.01
 			}
 		}
 	}

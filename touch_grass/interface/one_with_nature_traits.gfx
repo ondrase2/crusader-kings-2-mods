@@ -8,6 +8,34 @@ spriteTypes = {
 		effectFile = "gfx/FX/buttonstate.lua"
 	}
 	spriteType = {
+		name = "GFX_trait_one_with_fire"
+		texturefile = "gfx/traits/bon_leader.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_one_with_water"
+		texturefile = "gfx/traits/curious.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_one_with_forest"
+		texturefile = "gfx/traits/fussy.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_one_with_earth"
+		texturefile = "gfx/traits/kailash_guardian.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
 		name = "GFX_touch_grass"
 		texturefile = "gfx/interface/decision_icon_touch_grass.tga"
 	}

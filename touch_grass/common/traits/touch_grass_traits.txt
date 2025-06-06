@@ -7,5 +7,22 @@ one_with_nature = {
 	sex_appeal_opinion = 10
 	ruler_designer_cost = 25
 }
+one_with_fire = {
+	vassal_opinion = 5
+	monthly_character_prestige = 0.1
+	ruler_designer_cost = 25
+}
+one_with_water = {
+	sex_appeal_opinion = 10
+	ruler_designer_cost = 25
+}
+one_with_forest = {
+	fertility = 0.1
+	ruler_designer_cost = 25
+}
+one_with_earth = {
+	martial = 1
+	ruler_designer_cost = 25
+}
 
 

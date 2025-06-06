@@ -7,15 +7,67 @@ touch_grass_repeatable;One with nature;;;;;;;;;;;;;x
 touch_grass_repeatable_desc;Perhaps its time to give the outside a try again.;;;;;;;;;;;;;x
 one_with_nature_cooldown_desc;Nature is fine and all but maybe you should just stay indoors for a few years.;;;;;;;;;;;;;x
 EVTDESC_touch_grass_ev_1;You made your mind to go outside and seek tranquility.;;;;;;;;;;;;;x
-EVTDESC_touch_grass_ev_1a;You made your mind to go outside and seek tranquility.;;;;;;;;;;;;;x
-EVTDESC_touch_grass_ev_1b;You made your mind to go outside and seek tranquility.;;;;;;;;;;;;;x
-EVTDESC_touch_grass_ev_1c;You made your mind to go outside and seek tranquility.;;;;;;;;;;;;;x
-EVTDESC_touch_grass_ev_1d;You made your mind to go outside and seek tranquility.;;;;;;;;;;;;;x
+EVTDESC_touch_grass_ev_1a;I will go to a forest;;;;;;;;;;;;;x
+EVTDESC_touch_grass_ev_1b;a night out at a local pub sound nice;;;;;;;;;;;;;x
+EVTDESC_touch_grass_ev_1c;I will visit a lake.;;;;;;;;;;;;;x
+EVTDESC_touch_grass_ev_1d;Hiking in the mountains it is.;;;;;;;;;;;;;x
 EVTDESC_touch_grass_ev_2;You find yourself in a middle of a forest.You can hear the birds singing and the wind blowing on the leaves.How do you feel?;;;;;;;;;;;;;x
 EVTDESC_touch_grass_ev_2a;I feel so calm.like all the problems have just dissapeared.I am on with nature and the nature is one with me;;;;;;;;;;;;;x
 EVTDESC_touch_grass_ev_2b;Actualy i dont like it here there too mouch sunlight and insects and i want to go home!;;;;;;;;;;;;;x
-EVTDESC_touch_grass_ev_2c;Its touch but I have to power through.;;;;;;;;;;;;;x
+EVTDESC_touch_grass_ev_2c;Its tough but I have to power through.;;;;;;;;;;;;;x
 EVTDESC_touch_grass_ev_2d;Hmmm...i guess its fine but you know what is also fine...staying home.;;;;;;;;;;;;;x
+EVTDESC_touch_grass_ev_3;relaxing;;;;;;;;;;;;;x
+EVTDESC_touch_grass_ev_3a;yes.;;;;;;;;;;;;;x
+EVTDESC_touch_grass_ev_4;You are a coward and a failure.;;;;;;;;;;;;;x
+EVTDESC_touch_grass_ev_4a;yes.;;;;;;;;;;;;;x
+EVTDESC_touch_grass_ev_5;keep at it;;;;;;;;;;;;;x
+EVTDESC_touch_grass_ev_5a;I will;;;;;;;;;;;;;x
+EVTDESC_touch_grass_ev_6;could you try a little?;;;;;;;;;;;;;x
+EVTDESC_touch_grass_ev_6a;uhhhh...;;;;;;;;;;;;;x
+
+
+EVTDESC_touch_grass_ev_10;You sit down in a local tavern.How are you going to spend your time?;;;;;;;;;;;;;x
+EVTDESC_touch_grass_ev_10a;I will drink and eat of course!;;;;;;;;;;;;;x
+EVTDESC_touch_grass_ev_10b;Actualy i dont like it here there too many people and noise and i want to go home!;;;;;;;;;;;;;x
+EVTDESC_touch_grass_ev_10c;ill pick a fight with someone.;;;;;;;;;;;;;x
+EVTDESC_touch_grass_ev_10d;hmmm...maybe I could find someone to have a bit a "fun" with.;;;;;;;;;;;;;x
+EVTDESC_touch_grass_ev_11;you are eating grilled meat.as you wash it down with some booze you observe your surroudings.there are people having fun.there is fire in the firepit.you feel the fun and joy.;;;;;;;;;;;;;x
+EVTDESC_touch_grass_ev_11a;its just fun.;;;;;;;;;;;;;x
+EVTDESC_touch_grass_ev_12;You are a coward and a failure;;;;;;;;;;;;;x
+EVTDESC_touch_grass_ev_12a;yes.;;;;;;;;;;;;;x
+EVTDESC_touch_grass_ev_13;as you begin to insult a local ruffian his fist is already closing towards your face.;;;;;;;;;;;;;x
+EVTDESC_touch_grass_ev_13a;bad idea.;;;;;;;;;;;;;x
+EVTDESC_touch_grass_ev_14;you have spend a passianate night.very realaxing indeed.;;;;;;;;;;;;;x
+EVTDESC_touch_grass_ev_14a;nice.;;;;;;;;;;;;;x
+
+EVTDESC_touch_grass_ev_20;You stare at the watery surface,observing little waves as they disturb the calm water.;;;;;;;;;;;;;x
+EVTDESC_touch_grass_ev_20a;I will go for a swim.;;;;;;;;;;;;;x
+EVTDESC_touch_grass_ev_20b;Actualy i dont like it the water is too wet and cold and I want to go home!;;;;;;;;;;;;;x
+EVTDESC_touch_grass_ev_20c;ill try to catch some fish.;;;;;;;;;;;;;x
+EVTDESC_touch_grass_ev_20d;river upstream or a waterfall.;;;;;;;;;;;;;x
+EVTDESC_touch_grass_ev_21;the water is cold but somehow it feels refreshing.;;;;;;;;;;;;;x
+EVTDESC_touch_grass_ev_21a;*shivers*.;;;;;;;;;;;;;x
+EVTDESC_touch_grass_ev_22;coward.;;;;;;;;;;;;;x
+EVTDESC_touch_grass_ev_22a;yes.;;;;;;;;;;;;;x
+EVTDESC_touch_grass_ev_23;you couldnt catch anything but somehow just siting by the lake and waiting had something to it.;;;;;;;;;;;;;x
+EVTDESC_touch_grass_ev_23a;how?;;;;;;;;;;;;;x
+EVTDESC_touch_grass_ev_24;as you walk along the stream you see some fish migrating upstream.;;;;;;;;;;;;;x
+EVTDESC_touch_grass_ev_24a;how can they swim so effortlessly?;;;;;;;;;;;;;x
+
+EVTDESC_touch_grass_ev_30;You arrive at the base of a mountain.;;;;;;;;;;;;;x
+EVTDESC_touch_grass_ev_30a;ill hike to the top.;;;;;;;;;;;;;x
+EVTDESC_touch_grass_ev_30b;lets set up a camp right here.;;;;;;;;;;;;;x
+EVTDESC_touch_grass_ev_30c;go check the other side.;;;;;;;;;;;;;x
+EVTDESC_touch_grass_ev_30d;explore a cave.;;;;;;;;;;;;;x
+EVTDESC_touch_grass_ev_31;after a few hours you reach the top.it was exhausting but the view is worth it.;;;;;;;;;;;;;x
+EVTDESC_touch_grass_ev_31a;breathtaking.;;;;;;;;;;;;;x
+EVTDESC_touch_grass_ev_32;You spend the night in the shadow of a giant.;;;;;;;;;;;;;x
+EVTDESC_touch_grass_ev_32a;humbling;;;;;;;;;;;;;x
+EVTDESC_touch_grass_ev_33;you walk around the mountain and realize its not only tall but also wide.;;;;;;;;;;;;;x
+EVTDESC_touch_grass_ev_33a;a pile of rock and stone.;;;;;;;;;;;;;x
+EVTDESC_touch_grass_ev_34;the entrance is large and it runs deep.;;;;;;;;;;;;;x
+EVTDESC_touch_grass_ev_34a;could this be the entrance to hell?;;;;;;;;;;;;;x
+
 EVTDESC_touch_grass_ev_100;You are nature incarnate.;;;;;;;;;;;;;x
 EVTDESC_touch_grass_ev_100a;YES!;;;;;;;;;;;;;x
 EVTDESC_touch_grass_ev_101;You conquered your fears but havent realy relaxed much.;;;;;;;;;;;;;x
@@ -24,4 +76,3 @@ EVTDESC_touch_grass_ev_102;You are a coward and a failure.;;;;;;;;;;;;;x
 EVTDESC_touch_grass_ev_102a;yes.;;;;;;;;;;;;;x
 EVTDESC_touch_grass_ev_103;You feel relieved;;;;;;;;;;;;;x
 EVTDESC_touch_grass_ev_103a;Finally some peace and quiet.;;;;;;;;;;;;;x
-
