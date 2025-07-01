@@ -1,0 +1,4 @@
+#########society_of_scholars
+scientist = {
+	learning = 5
+}

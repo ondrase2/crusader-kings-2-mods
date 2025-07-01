@@ -1,0 +1,7 @@
+
+society_of_scholars_read_cd_mod = {
+	icon = 1
+}
+society_of_scholars_write_cd_mod = {
+	icon = 1
+}

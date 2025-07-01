@@ -1,0 +1,1268 @@
+namespace = society_of_scholars_ev
+# <= and >= works =< and => does not wtf
+character_event = {
+	id = society_of_scholars_ev.1
+	picture = "GFX_evt_hunt"
+	desc = "library"
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		
+	}	
+
+	option = {
+		name = "read a book"
+		trigger = {
+			NOT = { has_character_modifier = society_of_scholars_read_cd_mod }
+					
+				
+			
+			
+		}
+		hidden_effect = {
+			
+				character_event = { id = society_of_scholars_ev.2 }
+			
+		}
+	}
+	option = {
+		name = "write a book"
+		ai_chance = {	factor = 1	modifier = {	factor = 0	NOT = {	treasury = 300	}	}}
+		trigger = {
+			
+			NOT = { has_character_modifier = society_of_scholars_write_cd_mod }
+		}
+		custom_tooltip = {	text = "write some book"}
+		hidden_effect = {
+			
+				
+				character_event = { id = society_of_scholars_ev.10 }
+			
+		}
+	}
+	option = {
+		name = "leave"
+		trigger = {
+			
+		}
+		#hidden_effect = {
+			
+			#	character_event = { id = society_of_scholars_ev.20}
+			
+		#}
+	}
+	option = {
+		
+		name= {
+  			text = "upgrade"
+  				trigger = {
+					check_variable = { which = global_upgrades value <= 0 }
+  				}
+		}
+		name= {
+  			text = "upgrade next lvl"
+  				trigger = {
+					check_variable = { which = global_upgrades value > 0 }
+  				}
+		}
+		ai_chance = {	factor = 1	modifier = {	factor = 0	NOT = {	treasury = 300	}	}}
+		trigger = {
+			check_variable = { which = global_upgrades value <= 5 }
+		}
+		wealth=global_upgrades_cost_gold
+		hidden_effect = {
+				
+				change_variable = { which = global_upgrades_cost_gold value = -20 }
+				
+				
+				change_variable = { which = global_upgrades value = 1 }
+				#character_event = { id = society_of_scholars_ev.30}
+			
+		}
+		
+	}
+
+
+}
+
+character_event = {
+	id = society_of_scholars_ev.2
+	desc = "read a book"
+	picture = "GFX_evt_hunt"
+
+
+	is_triggered_only = yes
+	
+	
+	immediate = {
+		
+	}
+
+	
+
+	option = {
+		name = "anatomy book"
+		trigger = {
+			check_variable = { which = global_anatomy_book_written value > 0 }
+			
+			
+		}
+		
+		
+		if = { limit = {learning < 35}
+			add_trait = physician
+			hidden_tooltip = {
+				add_character_modifier = {
+					modifier = society_of_scholars_read_cd_mod
+					years = 1
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "combat tactics guide"
+		trigger = {
+			check_variable = { which = global_skilled_tactician_book_written value > 0 }
+		}
+		add_trait = skilled_tactician
+		hidden_tooltip = {
+				add_character_modifier = {
+					modifier = society_of_scholars_read_cd_mod
+					years = 1
+				}
+			}
+	}
+	option = {
+		name = "lusty argonian maid"
+		trigger = {
+			check_variable = { which = global_lustful_book_written value > 0 }
+		}
+		add_trait = lustful
+		hidden_tooltip = {
+				add_character_modifier = {
+					modifier = society_of_scholars_read_cd_mod
+					years = 1
+				}
+			}
+		
+	}
+	
+
+	option = {
+		name = "next Bookshelf"
+		trigger = {
+			check_variable = { which = global_upgrades value > 0 }
+		}
+		character_event = { id = society_of_scholars_ev.3}
+		
+	}
+	option = {
+		name = "leave"
+		trigger = {
+			check_variable = { which = global_upgrades value <= 0 }
+		}
+		
+		
+	}
+}
+
+character_event = {
+	id =society_of_scholars_ev.3
+	desc = "bookshelf 2"
+	picture = "GFX_evt_hunt"
+
+	is_triggered_only = yes
+
+
+	option = {
+		name = "how to negotiate charismaticaly"
+		trigger = {
+			check_variable = { which = global_charismatic_negotiator_book_written value > 0 }
+		}
+		add_trait = charismatic_negotiator
+		hidden_tooltip = {
+				add_character_modifier = {
+					modifier = society_of_scholars_read_cd_mod
+					years = 1
+				}
+			}
+	}
+	option = {
+		name = "guide to wealth"
+		trigger = {
+			check_variable = { which = global_fortune_builder_book_written value > 0 }
+		}
+		add_trait = fortune_builder
+		hidden_tooltip = {
+				add_character_modifier = {
+					modifier = society_of_scholars_read_cd_mod
+					years = 1
+				}
+			}
+	}
+	option = {
+		name = "next Bookshelf"
+		trigger = {
+			check_variable = { which = global_upgrades value > 1 }
+		}
+		character_event = { id = society_of_scholars_ev.4}
+		
+	}
+	option = {
+		name = "leave"
+		trigger = {
+			check_variable = { which = global_upgrades value <= 1 }
+		}
+		
+		
+	}
+}
+character_event = {
+	id =society_of_scholars_ev.4
+	desc = "bookshelf 2"
+	picture = "GFX_evt_hunt"
+
+	is_triggered_only = yes
+
+
+	option = {
+		name = "how to negotiate charismaticaly"
+		trigger = {
+			check_variable = { which = global_charismatic_negotiator_book_written value > 0 }
+		}
+		add_trait = charismatic_negotiator
+		hidden_tooltip = {
+				add_character_modifier = {
+					modifier = society_of_scholars_read_cd_mod
+					years = 1
+				}
+			}
+	}
+	option = {
+		name = "guide to wealth"
+		trigger = {
+			check_variable = { which = global_fortune_builder_book_written value > 0 }
+		}
+		add_trait = fortune_builder
+		hidden_tooltip = {
+				add_character_modifier = {
+					modifier = society_of_scholars_read_cd_mod
+					years = 1
+				}
+			}
+	}
+	option = {
+		name = "next Bookshelf"
+		trigger = {
+			check_variable = { which = global_upgrades value > 2 }
+		}
+		character_event = { id = society_of_scholars_ev.5}
+		
+	}
+	option = {
+		name = "leave"
+		trigger = {
+			check_variable = { which = global_upgrades value <= 2 }
+		}
+		
+		
+	}
+}
+character_event = {
+	id =society_of_scholars_ev.5
+	desc = "bookshelf 2"
+	picture = "GFX_evt_hunt"
+
+	is_triggered_only = yes
+
+
+	option = {
+		name = "how to negotiate charismaticaly"
+		trigger = {
+			check_variable = { which = global_charismatic_negotiator_book_written value > 0 }
+		}
+		add_trait = charismatic_negotiator
+		hidden_tooltip = {
+				add_character_modifier = {
+					modifier = society_of_scholars_read_cd_mod
+					years = 1
+				}
+			}
+	}
+	option = {
+		name = "guide to wealth"
+		trigger = {
+			check_variable = { which = global_fortune_builder_book_written value > 0 }
+		}
+		add_trait = fortune_builder
+		hidden_tooltip = {
+				add_character_modifier = {
+					modifier = society_of_scholars_read_cd_mod
+					years = 1
+				}
+			}
+	}
+	option = {
+		name = "next Bookshelf"
+		trigger = {
+			check_variable = { which = global_upgrades value > 3 }
+		}
+		character_event = { id = society_of_scholars_ev.6}
+		
+	}
+	option = {
+		name = "leave"
+		trigger = {
+			check_variable = { which = global_upgrades value <= 3 }
+		}
+		
+		
+	}
+}
+character_event = {
+	id =society_of_scholars_ev.6
+	desc = "bookshelf 2"
+	picture = "GFX_evt_hunt"
+
+	is_triggered_only = yes
+
+
+	option = {
+		name = "how to negotiate charismaticaly"
+		trigger = {
+			check_variable = { which = global_charismatic_negotiator_book_written value > 0 }
+		}
+		add_trait = charismatic_negotiator
+		hidden_tooltip = {
+				add_character_modifier = {
+					modifier = society_of_scholars_read_cd_mod
+					years = 1
+				}
+			}
+	}
+	option = {
+		name = "guide to wealth"
+		trigger = {
+			check_variable = { which = global_fortune_builder_book_written value > 0 }
+		}
+		add_trait = fortune_builder
+		hidden_tooltip = {
+				add_character_modifier = {
+					modifier = society_of_scholars_read_cd_mod
+					years = 1
+				}
+			}
+	}
+	option = {
+		name = "next Bookshelf"
+		trigger = {
+			check_variable = { which = global_upgrades value > 4 }
+		}
+		character_event = { id = society_of_scholars_ev.7}
+		
+	}
+	option = {
+		name = "leave"
+		trigger = {
+			check_variable = { which = global_upgrades value <= 4 }
+		}
+		
+		
+	}
+}
+character_event = {
+	id =society_of_scholars_ev.6
+	desc = "bookshelf 2"
+	picture = "GFX_evt_hunt"
+
+	is_triggered_only = yes
+
+
+	option = {
+		name = "how to negotiate charismaticaly"
+		trigger = {
+			check_variable = { which = global_charismatic_negotiator_book_written value > 0 }
+		}
+		add_trait = charismatic_negotiator
+		hidden_tooltip = {
+				add_character_modifier = {
+					modifier = society_of_scholars_read_cd_mod
+					years = 1
+				}
+			}
+	}
+	option = {
+		name = "guide to wealth"
+		trigger = {
+			check_variable = { which = global_fortune_builder_book_written value > 0 }
+		}
+		add_trait = fortune_builder
+		hidden_tooltip = {
+				add_character_modifier = {
+					modifier = society_of_scholars_read_cd_mod
+					years = 1
+				}
+			}
+	}
+	option = {
+		name = "next Bookshelf"
+		trigger = {
+			check_variable = { which = global_upgrades value > 5 }
+		}
+		character_event = { id = society_of_scholars_ev.8}
+		
+	}
+	option = {
+		name = "leave"
+		trigger = {
+			check_variable = { which = global_upgrades value <= 5 }
+		}
+		
+		
+	}
+}
+character_event = {
+	id =society_of_scholars_ev.8
+	desc = "bookshelf 2"
+	picture = "GFX_evt_hunt"
+
+	is_triggered_only = yes
+
+
+	option = {
+		name = "how to negotiate charismaticaly"
+		trigger = {
+			check_variable = { which = global_charismatic_negotiator_book_written value > 0 }
+		}
+		add_trait = charismatic_negotiator
+		hidden_tooltip = {
+				add_character_modifier = {
+					modifier = society_of_scholars_read_cd_mod
+					years = 1
+				}
+			}
+	}
+	option = {
+		name = "guide to wealth"
+		trigger = {
+			check_variable = { which = global_fortune_builder_book_written value > 0 }
+		}
+		add_trait = fortune_builder
+		hidden_tooltip = {
+				add_character_modifier = {
+					modifier = society_of_scholars_read_cd_mod
+					years = 1
+				}
+			}
+	}
+	option = {
+		name = "leave library"
+	}
+	option = {
+		name = "first bookshelf"
+	character_event = { id = society_of_scholars_ev.2}
+	}
+}
+
+
+
+character_event = {
+	id = society_of_scholars_ev.10
+	desc = "write a book"
+	picture = "GFX_evt_hunt"
+
+
+	is_triggered_only = yes
+	
+	
+	immediate = {
+		
+	}
+
+	option = {
+		name = "write anatomy book"
+		trigger = {
+			NOT{check_variable = { which = global_anatomy_book_written value > 0 }}
+			trait = physician
+		}
+		
+		set_variable = { which = global_anatomy_book_written value = 1 }
+		hidden_tooltip = {
+				add_character_modifier = {
+					modifier = society_of_scholars_write_cd_mod
+					years = 1
+				}
+			}
+		
+	}
+
+	option = {
+		name = "write combat tactics manual"
+		trigger = {
+			NOT{check_variable = { which = global_skilled_tactician_book_written value > 0 }}
+			trait = skilled_tactician
+		}
+		set_variable = { which = global_skilled_tactician_book_written value = 1 }
+		hidden_tooltip = {
+				add_character_modifier = {
+					modifier = society_of_scholars_write_cd_mod
+					years = 1
+				}
+			}
+	}
+	option = {
+		name = "lusty argonian maid"
+		trigger = {
+			NOT{check_variable = { which = global_lustful_book_written value > 0 }}
+			trait = lustful
+		}
+		set_variable = { which = global_lustful_book_written value = 1 }
+		hidden_tooltip = {
+				add_character_modifier = {
+					modifier = society_of_scholars_write_cd_mod
+					years = 1
+				}
+			}
+		
+	}
+	
+
+	option = {
+		name = "next Bookshelf"
+		trigger = {
+			check_variable = { which = global_upgrades value > 0 }
+		}
+		character_event = { id = society_of_scholars_ev.11}
+		
+	}
+	option = {
+		name = "leave"
+		trigger = {
+			check_variable = { which = global_upgrades value <= 0 }
+		}
+		
+		
+	}
+}
+
+character_event = {
+	id =society_of_scholars_ev.11
+	desc = "bookshelf 2"
+	picture = "GFX_evt_hunt"
+
+	is_triggered_only = yes
+
+
+	option = {
+		name = "how to negotiate charismaticaly"
+	trigger = {
+			NOT{check_variable = { which = global_charismatic_negotiator_book_written > 0 }}
+			trait = charismatic_negotiator
+		}
+		set_variable = { which = global_charismatic_negotiator_book_written value = 1 }
+		hidden_tooltip = {
+				add_character_modifier = {
+					modifier = society_of_scholars_write_cd_mod
+					years = 1
+				}
+			}
+	}
+	option = {
+		name = "guide to wealth"
+	trigger = {
+			NOT{check_variable = { which = global_charismatic_negotiator_book_written > 0 }}
+			trait = fortune_builder
+		}
+		set_variable = { which = global_fortune_builder_book_written value = 1 }
+		hidden_tooltip = {
+				add_character_modifier = {
+					modifier = society_of_scholars_write_cd_mod
+					years = 1
+				}
+			}
+	}
+	option = {
+		name = "next Bookshelf"
+		trigger = {
+			check_variable = { which = global_upgrades value > 1 }
+		}
+		character_event = { id = society_of_scholars_ev.12}
+		
+	}
+	option = {
+		name = "leave"
+		trigger = {
+			check_variable = { which = global_upgrades value <= 1 }
+		}
+		
+		
+	}
+}
+character_event = {
+	id =society_of_scholars_ev.12
+	desc = "bookshelf 2"
+	picture = "GFX_evt_hunt"
+
+	is_triggered_only = yes
+
+
+	option = {
+		name = "how to negotiate charismaticaly"
+	trigger = {
+			NOT{check_variable = { which = global_charismatic_negotiator_book_written > 0 }}
+			trait = charismatic_negotiator
+		}
+		set_variable = { which = global_charismatic_negotiator_book_written value = 1 }
+		hidden_tooltip = {
+				add_character_modifier = {
+					modifier = society_of_scholars_write_cd_mod
+					years = 1
+				}
+			}
+	}
+	option = {
+		name = "guide to wealth"
+	trigger = {
+			NOT{check_variable = { which = global_charismatic_negotiator_book_written > 0 }}
+			trait = fortune_builder
+		}
+		set_variable = { which = global_fortune_builder_book_written value = 1 }
+		hidden_tooltip = {
+				add_character_modifier = {
+					modifier = society_of_scholars_write_cd_mod
+					years = 1
+				}
+			}
+	}
+	option = {
+		name = "next Bookshelf"
+		trigger = {
+			check_variable = { which = global_upgrades value > 2 }
+		}
+		character_event = { id = society_of_scholars_ev.13}
+		
+	}
+	option = {
+		name = "leave"
+		trigger = {
+			check_variable = { which = global_upgrades value <= 2 }
+		}
+		
+		
+	}
+}
+character_event = {
+	id =society_of_scholars_ev.13
+	desc = "bookshelf 2"
+	picture = "GFX_evt_hunt"
+
+	is_triggered_only = yes
+
+
+	option = {
+		name = "how to negotiate charismaticaly"
+	trigger = {
+			NOT{check_variable = { which = global_charismatic_negotiator_book_written > 0 }}
+			trait = charismatic_negotiator
+		}
+		set_variable = { which = global_charismatic_negotiator_book_written value = 1 }
+		hidden_tooltip = {
+				add_character_modifier = {
+					modifier = society_of_scholars_write_cd_mod
+					years = 1
+				}
+			}
+	}
+	option = {
+		name = "guide to wealth"
+	trigger = {
+			NOT{check_variable = { which = global_charismatic_negotiator_book_written > 0 }}
+			trait = fortune_builder
+		}
+		set_variable = { which = global_fortune_builder_book_written value = 1 }
+		hidden_tooltip = {
+				add_character_modifier = {
+					modifier = society_of_scholars_write_cd_mod
+					years = 1
+				}
+			}
+	}
+	option = {
+		name = "next Bookshelf"
+		trigger = {
+			check_variable = { which = global_upgrades value > 3 }
+		}
+		character_event = { id = society_of_scholars_ev.14}
+		
+	}
+	option = {
+		name = "leave"
+		trigger = {
+			check_variable = { which = global_upgrades value <= 3 }
+		}
+		
+		
+	}
+}
+character_event = {
+	id =society_of_scholars_ev.14
+	desc = "bookshelf 2"
+	picture = "GFX_evt_hunt"
+
+	is_triggered_only = yes
+
+
+	option = {
+		name = "how to negotiate charismaticaly"
+	trigger = {
+			NOT{check_variable = { which = global_charismatic_negotiator_book_written > 0 }}
+			trait = charismatic_negotiator
+		}
+		set_variable = { which = global_charismatic_negotiator_book_written value = 1 }
+		hidden_tooltip = {
+				add_character_modifier = {
+					modifier = society_of_scholars_write_cd_mod
+					years = 1
+				}
+			}
+	}
+	option = {
+		name = "guide to wealth"
+	trigger = {
+			NOT{check_variable = { which = global_charismatic_negotiator_book_written > 0 }}
+			trait = fortune_builder
+		}
+		set_variable = { which = global_fortune_builder_book_written value = 1 }
+		hidden_tooltip = {
+				add_character_modifier = {
+					modifier = society_of_scholars_write_cd_mod
+					years = 1
+				}
+			}
+	}
+	option = {
+		name = "next Bookshelf"
+		trigger = {
+			check_variable = { which = global_upgrades value > 4 }
+		}
+		character_event = { id = society_of_scholars_ev.15}
+		
+	}
+	option = {
+		name = "leave"
+		trigger = {
+			check_variable = { which = global_upgrades value <= 4 }
+		}
+		
+		
+	}
+}
+character_event = {
+	id =society_of_scholars_ev.15
+	desc = "bookshelf 2"
+	picture = "GFX_evt_hunt"
+
+	is_triggered_only = yes
+
+
+	option = {
+		name = "how to negotiate charismaticaly"
+	trigger = {
+			NOT{check_variable = { which = global_charismatic_negotiator_book_written > 0 }}
+			trait = charismatic_negotiator
+		}
+		set_variable = { which = global_charismatic_negotiator_book_written value = 1 }
+		hidden_tooltip = {
+				add_character_modifier = {
+					modifier = society_of_scholars_write_cd_mod
+					years = 1
+				}
+			}
+	}
+	option = {
+		name = "guide to wealth"
+	trigger = {
+			NOT{check_variable = { which = global_charismatic_negotiator_book_written > 0 }}
+			trait = fortune_builder
+		}
+		set_variable = { which = global_fortune_builder_book_written value = 1 }
+		hidden_tooltip = {
+				add_character_modifier = {
+					modifier = society_of_scholars_write_cd_mod
+					years = 1
+				}
+			}
+	}
+	option = {
+		name = "next Bookshelf"
+		trigger = {
+			check_variable = { which = global_upgrades value > 5 }
+		}
+		character_event = { id = society_of_scholars_ev.16}
+		
+	}
+	option = {
+		name = "leave"
+		trigger = {
+			check_variable = { which = global_upgrades value <= 5 }
+		}
+		
+		
+	}
+}
+character_event = {
+	id =society_of_scholars_ev.16
+	desc = "bookshelf 2"
+	picture = "GFX_evt_hunt"
+
+	is_triggered_only = yes
+
+
+	option = {
+		name = "how to negotiate charismaticaly"
+	trigger = {
+			NOT{check_variable = { which = global_charismatic_negotiator_book_written > 0 }}
+			trait = charismatic_negotiator
+		}
+		set_variable = { which = global_charismatic_negotiator_book_written value = 1 }
+		hidden_tooltip = {
+				add_character_modifier = {
+					modifier = society_of_scholars_write_cd_mod
+					years = 1
+				}
+			}
+	}
+	option = {
+		name = "guide to wealth"
+	trigger = {
+			NOT{check_variable = { which = global_charismatic_negotiator_book_written > 0 }}
+			trait = fortune_builder
+		}
+		set_variable = { which = global_fortune_builder_book_written value = 1 }
+		hidden_tooltip = {
+				add_character_modifier = {
+					modifier = society_of_scholars_write_cd_mod
+					years = 1
+				}
+			}
+	}
+	option = {
+		name = "leave library"
+	}
+	option = {
+		name = "first bookshelf"
+	character_event = { id = society_of_scholars_ev.10}
+	}
+}
+
+#unused code
+
+character_event = {
+	id = society_of_scholars_ev.20
+	desc = "EVTDESC_society_of_scholars_ev_20" #You stare at the watery surface,observing little waves as they disturb the calm water.
+	picture = "GFX_evt_hunt"
+
+	is_triggered_only = yes
+	
+	
+	immediate = {
+	
+	}
+
+	option = {
+		name = "EVTDESC_society_of_scholars_ev_20a"#I will go for a swim.
+		trigger = {
+			NOT = {
+				OR = {
+					trait = craven
+					trait = shy
+				}
+			}
+		}
+		
+		hidden_tooltip = {
+			remove_trait = craven
+			remove_trait = shy
+		}
+		character_event = { id = society_of_scholars_ev.21 days = 20 }
+	}
+
+	option = {
+		name = "EVTDESC_society_of_scholars_ev_20b"#Actualy i dont like it the water is too wet and cold and I want to go home!
+		tooltip_info = craven
+		trigger = {
+			OR = {
+				trait = craven
+				trait = shy
+			}
+		}
+		character_event = { id = society_of_scholars_ev.22 days = 20 }
+	}
+	option = {
+		name = "EVTDESC_society_of_scholars_ev_20c"#ill try to catch some fish.
+		trigger = {
+			
+		}
+		hidden_tooltip = {
+			add_character_modifier = {
+				modifier = one_with_nature_cooldown_mod
+				years = 2
+				hidden = yes
+			}
+		}
+		character_event = { id = society_of_scholars_ev.23 days = 20 }
+		
+	}
+	
+
+	option = {
+		name = "EVTDESC_society_of_scholars_ev_20d"#river upstream or a waterfall.
+		trigger = {
+			
+		}
+		character_event = { id = society_of_scholars_ev.24 days = 20 }
+		
+	}
+}
+
+character_event = {
+	id =society_of_scholars_ev.21
+	desc = "EVTDESC_society_of_scholars_ev_21"
+	picture = "GFX_evt_hunt"
+
+	is_triggered_only = yes
+
+
+	option = {
+		name = "EVTDESC_society_of_scholars_ev_21a"#nice
+		add_trait = one_with_water
+		health = 5
+		prestige = 3
+		character_event = { id = society_of_scholars_ev.200 days = 1 }
+	}
+}
+character_event = {
+	id =society_of_scholars_ev.22
+	desc = "EVTDESC_society_of_scholars_ev_11"
+	picture = "GFX_evt_hunt"
+
+	is_triggered_only = yes
+
+
+	option = {
+		name = "EVTDESC_society_of_scholars_ev_22a"#coward
+		prestige = -10
+		character_event = { id = society_of_scholars_ev.200 days = 1 }
+	}
+}
+character_event = {
+	id =society_of_scholars_ev.23
+	desc = "EVTDESC_society_of_scholars_ev_23"
+	picture = "GFX_evt_hunt"
+
+	is_triggered_only = yes
+
+
+	option = {
+		name = "EVTDESC_society_of_scholars_ev_23a"
+		add_trait = one_with_water
+		prestige = 10
+		character_event = { id = society_of_scholars_ev.200 days = 1 }
+	}
+}
+character_event = {
+	id =society_of_scholars_ev.24
+	desc = "EVTDESC_society_of_scholars_ev_24"
+	picture = "GFX_evt_hunt"
+
+	is_triggered_only = yes
+
+
+	option = {
+		name = "EVTDESC_society_of_scholars_ev_24a"
+		add_trait = one_with_water
+		add_trait = quick
+		prestige = 10
+		character_event = { id = society_of_scholars_ev.200 days = 1 }
+	}
+}
+
+
+character_event = {
+	id = society_of_scholars_ev.30
+	desc = "EVTDESC_society_of_scholars_ev_30" #You arrive at the base of a mountain.
+	picture = "GFX_evt_hunt"
+
+	is_triggered_only = yes
+	
+	
+	immediate = {
+		
+	}
+
+	
+
+	option = {
+		name = "EVTDESC_society_of_scholars_ev_30a"#ill hike to the top.
+		trigger = {
+			NOT = {
+				OR = {
+					trait = craven
+					trait = shy
+				}
+			}
+		}
+		
+		hidden_tooltip = {
+			add_character_modifier = {
+				modifier = one_with_nature_cooldown_mod
+				years = 2
+				hidden = yes
+			}
+		}
+		character_event = { id = society_of_scholars_ev.31 days = 20 }
+	}
+
+	option = {
+		name = "EVTDESC_society_of_scholars_ev_30b"lets set up a camp right here.
+		tooltip_info = craven
+		trigger = {
+			OR = {
+				trait = craven
+				trait = shy
+			}
+		}
+		character_event = { id = society_of_scholars_ev.32 days = 20 }
+	}
+	option = {
+		name = "EVTDESC_society_of_scholars_ev_30c"#go check the other side.
+		trigger = {
+			OR = {
+				trait = craven
+				trait = shy
+			}
+		}
+		character_event = { id = society_of_scholars_ev.33 days = 20 }
+		
+	}
+	
+
+	option = {
+		name = "EVTDESC_society_of_scholars_ev_30d"#try to find some caverns.
+		trigger = {
+			#trait = arbitrary
+			NOT = { trait = craven }
+			NOT = { trait = shy }
+		}
+		character_event = { id = society_of_scholars_ev.34 days = 20 }
+		
+	}
+}
+
+character_event = {
+	id =society_of_scholars_ev.31
+	desc = "EVTDESC_society_of_scholars_ev_31"
+	picture = "GFX_evt_hunt"
+
+	is_triggered_only = yes
+
+
+	option = {
+		name = "EVTDESC_society_of_scholars_ev_31a"#nice
+		remove_trait = craven
+		remove_trait = shy
+		add_trait = one_with_earth
+		prestige = 10
+		character_event = { id = society_of_scholars_ev.200 days = 1 }
+	}
+}
+character_event = {
+	id =society_of_scholars_ev.32
+	desc = "EVTDESC_society_of_scholars_ev_32"
+	picture = "GFX_evt_hunt"
+
+	is_triggered_only = yes
+
+
+	option = {
+		name = "EVTDESC_society_of_scholars_ev_32a"#coward
+		add_trait = one_with_earth
+		remove_trait = craven
+		remove_trait = shy
+		prestige = 10
+		character_event = { id = society_of_scholars_ev.200 days = 1 }
+	}
+}
+character_event = {
+	id =society_of_scholars_ev.33
+	desc = "EVTDESC_society_of_scholars_ev_33"
+	picture = "GFX_evt_hunt"
+
+	is_triggered_only = yes
+
+
+	option = {
+		name = "EVTDESC_society_of_scholars_ev_33a"#dangrous
+		add_trait = one_with_earth
+		remove_trait = craven
+		remove_trait = shy
+		prestige = 10
+		character_event = { id = society_of_scholars_ev.200 days = 1 }
+	}
+}
+character_event = {
+	id =society_of_scholars_ev.34
+	desc = "EVTDESC_society_of_scholars_ev_34"
+	picture = "GFX_evt_hunt"
+
+	is_triggered_only = yes
+
+
+	option = {
+		name = "EVTDESC_society_of_scholars_ev_34a"#risky
+		add_trait = one_with_earth
+		remove_trait = craven
+		remove_trait = shy
+		prestige = 10
+		character_event = { id = society_of_scholars_ev.200 days = 1 }
+	}
+}
+
+
+
+
+
+#happy ending.
+character_event = {
+	id = society_of_scholars_ev.100
+	desc = "EVTDESC_society_of_scholars_ev_100"#You Are nature incarnate.
+	picture = "GFX_evt_hunt"
+
+	is_triggered_only = yes
+
+	
+
+	immediate = {
+		
+	}
+
+	option = {
+		name = "EVTDESC_society_of_scholars_ev_100a"
+		prestige = 10
+		remove_trait = stressed
+		add_trait = one_with_nature
+		remove_trait = one_with_fire
+		remove_trait = one_with_forest
+		remove_trait = one_with_water
+		remove_trait = one_with_earth
+		set_character_flag = one_with_nature
+		character_event = { id = society_of_scholars_ev.300 days = 1 }
+	}
+}
+#was shy so needs to try again.
+character_event = {
+	id =society_of_scholars_ev.101
+	desc = "EVTDESC_society_of_scholars_ev_101"
+	picture = "GFX_evt_hunt"
+
+	is_triggered_only = yes
+
+
+	immediate = {
+		
+	}
+
+	option = {
+		name = "EVTDESC_society_of_scholars_ev_101a"
+		remove_trait = craven
+		remove_trait = shy
+		prestige = 10
+		character_event = { id = society_of_scholars_ev.300 days = 1 }
+	}
+}
+#coward
+character_event = {
+	id = society_of_scholars_ev.102
+	desc = "EVTDESC_society_of_scholars_ev_102"
+	picture = "GFX_evt_hunt"
+
+	is_triggered_only = yes
+
+	
+
+	immediate = {
+		
+	}
+
+	option = {
+		name = "EVTDESC_society_of_scholars_ev_102a"
+		prestige = -10
+		character_event = { id = society_of_scholars_ev.300 days = 1 }
+	}
+}
+#indifferent
+character_event = {
+	id = society_of_scholars_ev.103
+	desc = "EVTDESC_society_of_scholars_ev_103"
+	picture = "GFX_evt_hunt"
+
+	is_triggered_only = yes
+
+	
+
+	immediate = {
+		
+	}
+
+	option = {
+		name = "EVTDESC_society_of_scholars_ev_103a"
+		remove_trait = stressed
+		prestige = 10
+		character_event = { id = society_of_scholars_ev.300 days = 1 }
+	}
+}
+
+
+character_event = {
+	id = society_of_scholars_ev.200
+	hide_window = yes
+	is_triggered_only = yes
+
+	
+
+	immediate = {
+		if {
+			limit = { 
+				trait = one_with_fire
+				trait = one_with_forest
+				trait = one_with_water
+				trait = one_with_earth
+			}
+			character_event = { id = society_of_scholars_ev.100 days = 1 }
+
+		}
+		else {
+			character_event = { id = society_of_scholars_ev.300 days = 1 }
+		}
+	}
+
+}
+
+#cleanup
+character_event = {
+	id = society_of_scholars_ev.300
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	
+
+	immediate = {
+		
+		
+		
+	}
+
+}
